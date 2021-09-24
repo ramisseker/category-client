@@ -34,7 +34,9 @@ export default {
   methods: {
     async getCategory() {
       try {
-        const response = await axios.get('http://localhost:3000/api/category');
+        const response = await axios.get(
+          'https://e-commerce-category.herokuapp.com/api/category'
+        );
         this.items[0] = response.data;
         this.fetchData = true;
       } catch (err) {
@@ -59,7 +61,7 @@ export default {
 
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/category/${id}`
+          `https://e-commerce-category.herokuapp.com/api/category/${id}`
         );
         if (this.components.length == boxId + 1) {
           this.components.push(Category);
