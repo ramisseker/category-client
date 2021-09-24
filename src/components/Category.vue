@@ -93,8 +93,6 @@ export default {
       }
     },
     async deleteCategory() {
-      console.log('id');
-      console.log('id ', this.itemId);
       try {
         await axios.delete(`http://localhost:3000/api/category/${this.itemId}`);
         this.$router.go('/');

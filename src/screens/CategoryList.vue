@@ -46,17 +46,13 @@ export default {
         this.items[boxId + 1] = [];
       }
       this.categoryIdList.push({ boxId: boxId, category_id: id });
-      console.log(
-        '1',
-        this.categoryIdList.filter((x) => x.boxId == boxId)
-      );
+
       if (this.categoryIdList.filter((x) => x.boxId == boxId).length > 0) {
         const a = this.categoryIdList.findIndex((a) => a.boxId == boxId);
         this.categoryIdList[a] = {
           boxId: boxId,
           category_id: id,
         };
-        console.log('this.categoryIdList[a]', this.categoryIdList[a]);
       } else {
         this.categoryIdList.push({ boxId: boxId, category_id: id });
       }
