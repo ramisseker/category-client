@@ -70,13 +70,10 @@ export default {
     },
     async saveCategory(id) {
       try {
-        await axios.post(
-          'https://e-commerce-category.herokuapp.com/api/category/',
-          {
-            category_name: this.categoryName,
-            category_id: id,
-          }
-        );
+        await axios.post('http://localhost:3000/api/category/', {
+          category_name: this.categoryName,
+          category_id: id,
+        });
         console.log(id);
         this.categoryName = '';
         this.$router.go('/');
@@ -86,12 +83,9 @@ export default {
     },
     async updateCategory(id) {
       try {
-        await axios.put(
-          `https://e-commerce-category.herokuapp.com/api/category/${id}`,
-          {
-            category_name: this.categoryName,
-          }
-        );
+        await axios.put(`http://localhost:3000/api/category/${id}`, {
+          category_name: this.categoryName,
+        });
         this.categoryName = '';
         this.$router.go('/');
       } catch (err) {
@@ -100,9 +94,7 @@ export default {
     },
     async deleteCategory() {
       try {
-        await axios.delete(
-          `https://e-commerce-category.herokuapp.com/api/category/${this.itemId}`
-        );
+        await axios.delete(`http://localhost:3000/api/category/${this.itemId}`);
         this.$router.go('/');
       } catch (err) {
         console.log(err);
